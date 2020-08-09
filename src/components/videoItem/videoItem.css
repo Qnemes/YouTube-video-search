@@ -1,0 +1,8 @@
+.ui.relaxed.divided.list .video-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.item .video-item__image {
+    max-width: 180px;
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import youtube from '../api/youtube'
+import youtube from '../API/youtube'
 
 const useVideos = ({ defaultSearchInput }) => {
     const [videos, setVideos] = useState([])

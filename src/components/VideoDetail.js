@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import './videoDetail.css'
 
-const VideoDetail = ({ video }) => {
+const VideoDetail = ({ video, forwardedRef }) => {
     if (!video) {
         return <div className="ui active centered inline loader spinner"></div>
     }
     return (
-        <React.Fragment>
-            <div className="ui embed">
+        <Fragment>
+            <div ref={forwardedRef} className="ui embed">
                 <iframe src={`https://www.youtube.com/embed/${video.id.videoId}`}
                     title={video.snippet.title}
                     frameBorder="0"
@@ -18,7 +18,7 @@ const VideoDetail = ({ video }) => {
                 <h4 className="ui header">{video.snippet.title}</h4>
                 <p>{video.snippet.description}</p>
             </div>
-        </React.Fragment>
+        </Fragment>
     )
 }
 

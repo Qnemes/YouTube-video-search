@@ -1,16 +1,15 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import VideoItem from './VideoItem'
+// onClick={window.scrollTo(0, 0)}
 
-const VideoList = ({ videos, onVideoSelect }) => {
-    const videoElRef = useRef(null)
-    const fireScrollEvent = () => videoElRef.current.scrollIntoView()
+const VideoList = ({ videos, onVideoSelect, onVideoClick }) => {
 
     const renderedList = videos.map(video => {
         return <VideoItem onVideoSelect={onVideoSelect}
             key={video.id.videoId}
             video={video}
-            refProp={videoElRef}
-            onVideoItemClick={fireScrollEvent} />
+            onClick={onVideoClick()}
+        />
     })
     return <div className="ui relaxed divided list">{renderedList}</div>
 }

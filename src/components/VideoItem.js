@@ -1,14 +1,11 @@
 import React from 'react'
 import './videoItem.css'
 
-const VideoItem = ({ video, onVideoSelect, onVideoItemClick, refProp }) => {
+const VideoItem = ({ video, onVideoSelect, refProp }) => {
     return (
         <div ref={refProp}
             className="item video-item"
-            onClick={() => {
-                onVideoSelect(video)
-                onVideoItemClick()
-            }}
+            onClick={() => onVideoSelect(video)}
         >
             <img className="ui image video-item__image" key={video.id.videoId}
                 alt={video.snippet.title}

@@ -1,6 +1,5 @@
 import React from 'react'
 import VideoItem from './VideoItem'
-// onClick={window.scrollTo(0, 0)}
 
 const VideoList = ({ videos, onVideoSelect, onVideoClick }) => {
 

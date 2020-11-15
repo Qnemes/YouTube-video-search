@@ -1,5 +1,6 @@
+import axios from 'axios'
 import { useState, useEffect } from 'react'
-import youtube from '../API/youtube'
+// import youtube from '../API/youtube'
 
 const useVideos = ({ defaultSearchInput }) => {
     const [videos, setVideos] = useState([])
@@ -9,7 +10,8 @@ const useVideos = ({ defaultSearchInput }) => {
     }, [defaultSearchInput])
 
     const search = async input => {
-        const response = await youtube.get('/search', {
+        const url = `/.netlify/functions/getVideos`
+        const response = await axios.get(url, {
             params: {
                 q: input
             }

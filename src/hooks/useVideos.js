@@ -12,7 +12,7 @@ const useVideos = defaultSearchInput => {
         const url = `/.netlify/functions/getVideos`
         const response = await axios.get(url, {
             params: {
-                q: 'input'
+                q: input
             }
         })
         setVideos(response.data.items)
